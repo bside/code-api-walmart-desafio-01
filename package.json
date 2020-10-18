@@ -1,0 +1,59 @@
+{
+  "name": "code-api-walmart-desafio-01",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10.16"
+  },
+  "repository": "github:bside/code-webapp-walmart-desafio-01",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "Álvaro González",
+    "email": "alvaro@code.cl",
+    "url": "https://github.com/bside/code-webapp-walmart-desafio-01"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "pretest": "npm run clean && npm run build",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js",
+    "docker:build": "docker build -t code-api-walmart-desafio-01 .",
+    "docker:run": "docker run -p 3000:3000 -d code-api-walmart-desafio-01",
+    "premigrate": "npm run build",
+    "migrate": "node ./dist/migrate",
+    "preopenapi-spec": "npm run build",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "prestart": "npm run build",
+    "start": "node -r source-map-support/register .",
+    "start:watch": "tsc-watch -b --onSuccess \"node -r source-map-support/register .\"",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^3.0.2",
+    "@loopback/core": "^2.11.0",
+    "@loopback/repository": "^3.1.0",
+    "@loopback/rest": "^8.0.0",
+    "@loopback/rest-explorer": "^3.0.2",
+    "@loopback/service-proxy": "^3.0.2",
+    "loopback-connector-mongodb": "^5.4.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.2.5",
+    "@loopback/testlab": "^3.2.7",
+    "@types/node": "^10.17.37",
+    "mocha": "^8.2.0",
+    "source-map-support": "^0.5.19",
+    "tsc-watch": "^4.2.9",
+    "typescript": "~4.0.3"
+  }
+}
