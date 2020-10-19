@@ -38,6 +38,7 @@
     "!*/__tests__"
   ],
   "dependencies": {
+    "@loopback/build": "^6.2.5",
     "@loopback/boot": "^3.0.2",
     "@loopback/core": "^2.11.0",
     "@loopback/repository": "^3.1.0",
@@ -48,7 +49,6 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@loopback/build": "^6.2.5",
     "@loopback/testlab": "^3.2.7",
     "@types/node": "^10.17.37",
     "mocha": "^8.2.0",
