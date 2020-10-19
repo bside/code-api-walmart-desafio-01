@@ -5,13 +5,14 @@ const config = {
   name: 'Products',
   connector: 'mongodb',
   url: '',
-  host: 'localhost',
+  host: 'code.qdzze.mongodb.net',
   port: 27017,
   user: 'productListUser',
   password: 'productListPassword',
   database: 'promotions',
   useNewUrlParser: true,
   authSource: 'admin',
+  protocol: 'mongodb+srv',
 };
 
 // Observe application's life cycle to disconnect the datasource when
