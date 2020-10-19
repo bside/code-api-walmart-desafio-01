@@ -45,11 +45,11 @@
     "@loopback/rest": "^8.0.0",
     "@loopback/rest-explorer": "^3.0.2",
     "@loopback/service-proxy": "^3.0.2",
+    "@loopback/testlab": "^3.2.7",
     "loopback-connector-mongodb": "^5.4.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@loopback/testlab": "^3.2.7",
     "@types/node": "^10.17.37",
     "mocha": "^8.2.0",
     "source-map-support": "^0.5.19",
