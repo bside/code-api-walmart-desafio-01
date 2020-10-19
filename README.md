@@ -45,3 +45,7 @@ npm run build
 ```sh
 npm test
 ```
+
+## Deploy to Heroku
+
+No further configuration needed
