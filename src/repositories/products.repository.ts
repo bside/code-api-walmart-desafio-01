@@ -37,8 +37,8 @@ export class ProductsRepository extends DefaultCrudRepository<
     return result;
   }
 
-  async findCustom(filter: any) {
-    if (!filter.where.custom) {
+  async findCustom(filter: any = {}) {
+    if (!filter.hasOwnProperty('where') || !filter.where.hasOwnProperty('custom')) {
       return this.find(filter);
     }
 
@@ -52,14 +52,14 @@ export class ProductsRepository extends DefaultCrudRepository<
       });
     }
     if (!results.length) {
-      results = await this.find({
+      results = await this.find(Object.assign(filter, {
         where: {
           or: [
             { brand: { like: customSearch } },
             { description: { like: customSearch } },
           ],
         },
-      });
+      }));
     }
 
     const isPalindrome = this.isPalindrome(customSearch);
